@@ -1,0 +1,245 @@
+.modal {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  padding: 40px;
+
+  height: 100%;
+  width: 100%;
+
+  background-color: $primary-background-color;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  overflow-y: scroll;
+
+  transform: translate(-50%, -50%) scale(1);
+  @include hover-delay(transform);
+
+  .backdrop.is-hidden & {
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+
+  @media screen and (max-width: 1199px) {
+    max-width: 450px;
+    max-height: 609px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    max-width: 528px;
+    max-height: 581px;
+  }
+}
+
+.modal__title {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.15;
+  text-align: center;
+  margin-bottom: 12px;
+
+  @media screen and (max-width: 767px) {
+    line-height: 1.5;
+    max-width: 370px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.modal__btn {
+  @include centeredFlex();
+
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  right: 8px;
+  top: 8px;
+
+  background-color: $primary-background-color;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+}
+
+.modal__icon {
+  fill: currentColor;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.form__group {
+  display: flex;
+  flex-direction: column;
+  margin-right: auto;
+  margin-bottom: 20px;
+
+  width: 100%;
+}
+
+.form__label {
+  text-align: left;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: 0.01em;
+  margin-bottom: 4px;
+
+  color: $secondary-text-color;
+}
+
+.form__item {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.form__input {
+  display: inline-block;
+  padding-left: 42px;
+
+  min-width: 100%;
+  min-height: 40px;
+  overflow-y: auto;
+
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+
+  @include hover-delay(border-color);
+
+  &:hover,
+  &:focus {
+    border-color: $accent-color;
+  }
+
+  @media screen and (max-width: 1199px) {
+    max-width: 370px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    max-width: 448px;
+  }
+}
+
+.form__icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+
+  transform: translateY(-50%);
+  fill: currentColor;
+
+  @include hover-delay(fill);
+
+  .form__item:focus-within & {
+    fill: $accent-color;
+  }
+}
+
+.form__comment-box {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-bottom: 0;
+}
+
+.form__comment-area {
+  border: none;
+  resize: none;
+  height: 120px;
+  padding: 12px 16px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+
+  min-width: 100%;
+  min-height: 120px;
+  overflow-y: auto;
+
+  @include hover-delay(border-color);
+
+  &:focus-within {
+    border-color: $accent-color;
+  }
+
+  &::placeholder {
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.01em;
+    color: $placeholder-comment-color;
+  }
+
+  @media screen and (max-width: 1199px) {
+    max-width: 370px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    max-width: 448px;
+  }
+}
+
+.form__policy {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.form__checkbox {
+  appearance: none;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.form__check-icon {
+  display: inline-block;
+  width: 16px;
+  height: 15px;
+  background-color: inherit;
+
+  border: 2px solid #212121;
+  border-radius: 2px;
+
+  @include two-hover-delay(border-color, background-color);
+
+  .form__checkbox:checked + & {
+    background-image: url(../images/icon-check.svg);
+    background-origin: border-box;
+    background-size: contain;
+    background-color: $accent-color;
+    border-color: $accent-color;
+    fill: $icon-secondary-color;
+  }
+
+  .form__checkbox:focus + & {
+    border-color: $accent-color;
+  }
+}
+
+.form__text {
+  margin-left: 7px;
+  color: $secondary-text-color;
+
+  @media screen and (max-width: 1199px) {
+    font-size: 12px;
+    line-height: 1.16;
+  }
+  @media screen and (min-width: 1200px) {
+    font-size: 14px;
+    line-height: 1.71;
+  }
+}
+
+.form__link {
+  @include hover-delay(color);
+  text-decoration-line: underline;
+  color: $accent-color;
+}
+
+.form__btn {
+  @extend %btn;
+  box-shadow: $main-btn-shadow;
+}

@@ -1,0 +1,57 @@
+.portfolio {
+  @extend %section;
+}
+
+.sorting-list {
+  @extend %list;
+
+  @media screen and (max-width: 767px) {
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 30px;
+    @include centeredFlex();
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin-bottom: 50px;
+    @include centeredFlex();
+  }
+}
+
+.sorting-list_item {
+  &:not(:last-child) {
+    margin-right: 8px;
+  }
+
+  @media screen and (max-width: 767px) {
+    &:not(:nth-last-child(-n + 2)) {
+      margin-bottom: 15px;
+    }
+
+    &:not(:last-child) {
+      margin-right: 8px;
+    }
+  }
+}
+
+.sorting-list__btn {
+  display: block;
+  border-radius: 4px;
+  padding: 6px 22px;
+
+  background-color: $secondary-background-color;
+  color: $primary-text-color;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.62;
+  text-align: center;
+
+  &:hover,
+  &:focus {
+    background-color: $accent-color;
+    color: $white-text-color;
+  }
+}

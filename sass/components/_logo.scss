@@ -1,0 +1,34 @@
+.logo {
+  @extend %link;
+
+  font-family: $logo-font;
+  font-weight: 700;
+
+  @media screen and (max-width: 1199px) {
+    font-size: 24px;
+    line-height: 1.17;
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-size: 26px;
+    line-height: 1.19;
+  }
+
+  &:hover .logo__item,
+  &:focus .logo__item {
+    color: $logo-accent-color;
+  }
+}
+
+.logo__item {
+  color: $logo-accent-color;
+  text-decoration: none;
+
+  &--common {
+    color: $logo-header-color;
+  }
+
+  &--inverse {
+    color: $logo-footer-color;
+  }
+}

@@ -1,0 +1,86 @@
+.team {
+  @extend %section;
+  background-color: $secondary-background-color;
+}
+
+.team__title {
+  @extend %title;
+}
+
+.team-list {
+  @extend %list;
+}
+
+.team {
+  .social-list {
+    margin-left: 32px;
+    margin-right: 32px;
+  }
+}
+
+.team-list__item {
+  width: 100%;
+  max-width: 450px;
+  min-height: 428px;
+  text-align: center;
+  background-color: $primary-background-color;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
+
+  @media screen and (max-width: 767px) {
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1199px) {
+    max-width: 354px;
+    width: calc((100% - 60px) / 2);
+    margin-right: 30px;
+
+    &:nth-child(even) {
+      margin-right: 0;
+    }
+
+    &:not(:nth-last-child(-n + 2)) {
+      margin-bottom: 30px;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    max-width: 270px;
+    width: calc((100% - 90px) / 4);
+    margin-right: 30px;
+
+    &:nth-child(4n) {
+      margin-right: 0;
+    }
+  }
+}
+
+.team-list__desc {
+  padding-top: 30px;
+  padding-bottom: 24px;
+  @media screen and (min-width: 1200px) {
+    padding-bottom: 30px;
+  }
+}
+
+.team-list__title {
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.team-list__title,
+.team-list__subtitle {
+  font-size: 16px;
+  line-height: 1.18;
+  text-align: center;
+}
+
+.team-list__subtitle {
+  font-weight: 400;
+  color: $secondary-text-color;
+  margin-bottom: 16px;
+}
