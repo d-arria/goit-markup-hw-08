@@ -401,6 +401,9 @@ button {
   align-self: flex-start;
   color: #212121;
 }
+.site-nav__link:hover, .site-nav__link:focus {
+  color: #2196f3;
+}
 @media screen and (max-width: 1199px) {
   .site-nav__link {
     padding-top: 21px;

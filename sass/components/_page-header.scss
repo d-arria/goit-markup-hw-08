@@ -158,6 +158,11 @@
 .site-nav__link {
   @extend %link;
 
+  &:hover,
+  &:focus {
+    color: $accent-color;
+  }
+
   align-self: flex-start;
 
   @media screen and (max-width: 1199px) {
