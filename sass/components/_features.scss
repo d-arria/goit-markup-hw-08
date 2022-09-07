@@ -1,5 +1,8 @@
 .features {
   @extend %section;
+  @media screen and (min-width: 1200px) {
+    padding-bottom: 0;
+  }
 }
 
 .features-list {
@@ -62,11 +65,14 @@
 }
 
 .features-list__subtitle {
-  text-align: center;
   font-weight: 700;
   font-size: 14px;
   text-transform: uppercase;
   margin-bottom: 10px;
+
+  @media screen and (max-width: 767px) {
+    text-align: center;
+  }
 }
 
 .features-list__text {

@@ -302,6 +302,7 @@
     background-color: $primary-background-color;
   }
 }
+
 .is-open {
   display: flex;
   flex-direction: column;
@@ -321,8 +322,6 @@
     letter-spacing: 0.02em;
 
     color: $primary-text-color;
-
-    // color: lightseagreen @include transition-for-1(color);
 
     @media screen and (min-width: 768px) {
       font-size: 14px;
@@ -361,21 +360,6 @@
     &__link {
       position: relative;
     }
-
-    // &__link--active::after {
-    //   content: '';
-
-    //   position: absolute;
-    //   left: 0;
-    //   bottom: 0;
-
-    //   display: block;
-    //   width: 100%;
-    //   height: 4px;
-
-    //   background-color: $accent-color;
-    //   border-radius: 2px;
-    // }
   }
 }
 
@@ -384,7 +368,9 @@
   margin-top: auto;
   margin-bottom: 64px;
   &__link {
+    font-weight: 500;
     font-size: 34px;
+    line-height: 1.17;
     color: $accent-color;
   }
 

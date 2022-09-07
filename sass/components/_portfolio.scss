@@ -13,6 +13,7 @@
 
 .portfolio-list__item {
   border: 1px solid #eeeeee;
+  max-width: 450px;
 
   &:hover,
   &:focus {
@@ -20,10 +21,16 @@
       1px 4px 6px rgba(0, 0, 0, 0.16);
   }
 
-  max-width: 450px;
+  @media screen and (max-width: 767px) {
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+  }
+
   @media screen and (min-width: 768px) {
     width: calc((100% - 1 * 30px) / 2);
   }
+
   @media screen and (min-width: 1200px) {
     width: calc((100% - 2 * 30px) / 3);
 
